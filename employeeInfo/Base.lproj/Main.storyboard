@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="X0e-lt-efd">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginViewController" id="vXZ-lx-hvc" customClass="loginViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -15,11 +16,623 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="es6-6D-tJO">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="EyX-HA-IT1">
+                                        <variation key="widthClass=compact" constant="159"/>
+                                    </constraint>
+                                    <constraint firstAttribute="height" constant="30" id="Fby-Xi-hF6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="EyX-HA-IT1"/>
+                                        <exclude reference="Fby-Xi-hF6"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="EyX-HA-IT1"/>
+                                        <include reference="Fby-Xi-hF6"/>
+                                    </mask>
+                                </variation>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j86-tF-2Zw">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="0ma-Wv-9rC">
+                                        <variation key="widthClass=compact" constant="159"/>
+                                    </constraint>
+                                    <constraint firstAttribute="height" constant="30" id="sGw-fP-oZS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="0ma-Wv-9rC"/>
+                                        <exclude reference="sGw-fP-oZS"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="0ma-Wv-9rC"/>
+                                        <include reference="sGw-fP-oZS"/>
+                                    </mask>
+                                </variation>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E2B-dY-3Wi">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="4Vz-Cm-sPM"/>
+                                    <constraint firstAttribute="height" constant="50" id="ZrQ-aF-WgJ"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="login_but.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="4Vz-Cm-sPM"/>
+                                        <exclude reference="ZrQ-aF-WgJ"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="4Vz-Cm-sPM"/>
+                                        <include reference="ZrQ-aF-WgJ"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="loginButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="AbB-wK-EqT"/>
+                                    <segue destination="QdZ-h6-2PX" kind="show" identifier="empListSeg" id="4Sf-cT-yOc"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bk4-q5-0kF">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="Ib5-19-ZLM"/>
+                                    <constraint firstAttribute="width" constant="100" id="iBr-Ht-KxY">
+                                        <variation key="widthClass=compact" constant="98"/>
+                                    </constraint>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Ib5-19-ZLM"/>
+                                        <exclude reference="iBr-Ht-KxY"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="Ib5-19-ZLM"/>
+                                        <include reference="iBr-Ht-KxY"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XmJ-Gt-chA">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="QlQ-mz-pbn">
+                                        <variation key="widthClass=compact" constant="98"/>
+                                    </constraint>
+                                    <constraint firstAttribute="height" constant="20" id="xuI-6f-CNx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="QlQ-mz-pbn"/>
+                                        <exclude reference="xuI-6f-CNx"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="QlQ-mz-pbn"/>
+                                        <include reference="xuI-6f-CNx"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bk4-q5-0kF" firstAttribute="centerY" secondItem="es6-6D-tJO" secondAttribute="centerY" id="0vJ-0G-2vT">
+                                <variation key="widthClass=compact" constant="-1"/>
+                            </constraint>
+                            <constraint firstItem="bk4-q5-0kF" firstAttribute="centerY" secondItem="es6-6D-tJO" secondAttribute="centerY" id="2sy-UO-2mK">
+                                <variation key="widthClass=compact" constant="-1"/>
+                            </constraint>
+                            <constraint firstItem="E2B-dY-3Wi" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="IQY-Zq-cVb"/>
+                            <constraint firstItem="bk4-q5-0kF" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="182" id="Pjy-o0-iFL">
+                                <variation key="widthClass=compact" constant="181"/>
+                            </constraint>
+                            <constraint firstItem="E2B-dY-3Wi" firstAttribute="top" secondItem="j86-tF-2Zw" secondAttribute="bottom" constant="8" symbolic="YES" id="RVy-uD-Bys"/>
+                            <constraint firstItem="bk4-q5-0kF" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="50" id="Upi-mZ-g4g">
+                                <variation key="widthClass=compact" constant="37"/>
+                            </constraint>
+                            <constraint firstItem="XmJ-Gt-chA" firstAttribute="top" secondItem="bk4-q5-0kF" secondAttribute="bottom" constant="14" id="bAd-E2-ujA"/>
+                            <constraint firstItem="XmJ-Gt-chA" firstAttribute="centerY" secondItem="j86-tF-2Zw" secondAttribute="centerY" id="f55-Pc-03s">
+                                <variation key="widthClass=compact" constant="-3"/>
+                            </constraint>
+                            <constraint firstItem="j86-tF-2Zw" firstAttribute="leading" secondItem="es6-6D-tJO" secondAttribute="leading" id="tRH-l6-6Yk"/>
+                            <constraint firstItem="bk4-q5-0kF" firstAttribute="leading" secondItem="XmJ-Gt-chA" secondAttribute="leading" id="zSk-k3-bFQ"/>
+                            <constraint firstItem="es6-6D-tJO" firstAttribute="leading" secondItem="bk4-q5-0kF" secondAttribute="trailing" constant="11" id="ztT-ni-6fF">
+                                <variation key="widthClass=compact" constant="24"/>
+                            </constraint>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="es6-6D-tJO"/>
+                                <exclude reference="j86-tF-2Zw"/>
+                                <exclude reference="E2B-dY-3Wi"/>
+                                <exclude reference="bk4-q5-0kF"/>
+                                <exclude reference="XmJ-Gt-chA"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="0vJ-0G-2vT"/>
+                                <exclude reference="2sy-UO-2mK"/>
+                                <exclude reference="Pjy-o0-iFL"/>
+                                <exclude reference="Upi-mZ-g4g"/>
+                                <exclude reference="zSk-k3-bFQ"/>
+                                <exclude reference="bAd-E2-ujA"/>
+                                <exclude reference="f55-Pc-03s"/>
+                                <exclude reference="ztT-ni-6fF"/>
+                                <exclude reference="tRH-l6-6Yk"/>
+                                <exclude reference="IQY-Zq-cVb"/>
+                                <exclude reference="RVy-uD-Bys"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="es6-6D-tJO"/>
+                                <include reference="j86-tF-2Zw"/>
+                                <include reference="E2B-dY-3Wi"/>
+                                <include reference="bk4-q5-0kF"/>
+                                <include reference="XmJ-Gt-chA"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="0vJ-0G-2vT"/>
+                                <include reference="2sy-UO-2mK"/>
+                                <include reference="Pjy-o0-iFL"/>
+                                <include reference="Upi-mZ-g4g"/>
+                                <include reference="zSk-k3-bFQ"/>
+                                <include reference="bAd-E2-ujA"/>
+                                <include reference="f55-Pc-03s"/>
+                                <include reference="ztT-ni-6fF"/>
+                                <include reference="tRH-l6-6Yk"/>
+                                <include reference="IQY-Zq-cVb"/>
+                                <include reference="RVy-uD-Bys"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <navigationItem key="navigationItem" id="0TV-yN-8yf"/>
+                    <connections>
+                        <outlet property="loginButton" destination="E2B-dY-3Wi" id="HTs-q2-0EG"/>
+                        <outlet property="userNameTF" destination="es6-6D-tJO" id="nya-Xy-hX7"/>
+                        <outlet property="userPassTF" destination="j86-tF-2Zw" id="WUJ-0q-8LB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="441" y="248"/>
+        </scene>
+        <!--Emp List View Controller-->
+        <scene sceneID="wXd-A8-bw1">
+            <objects>
+                <viewController storyboardIdentifier="EmpListViewController" id="QdZ-h6-2PX" customClass="EmpListViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qFH-h7-yL1"/>
+                        <viewControllerLayoutGuide type="bottom" id="gYa-LX-D6b"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kOf-xE-QXN">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="zJo-YM-RFl">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="QdZ-h6-2PX" id="ccN-93-4ib"/>
+                                    <outlet property="delegate" destination="QdZ-h6-2PX" id="RbC-Cx-EVl"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="zJo-YM-RFl" firstAttribute="top" secondItem="kOf-xE-QXN" secondAttribute="topMargin" constant="20" id="2QR-5f-FGy"/>
+                            <constraint firstItem="zJo-YM-RFl" firstAttribute="bottom" secondItem="gYa-LX-D6b" secondAttribute="top" id="72P-jT-9yK"/>
+                            <constraint firstItem="zJo-YM-RFl" firstAttribute="leading" secondItem="kOf-xE-QXN" secondAttribute="leadingMargin" constant="-16" id="TyF-cf-rbs"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="zJo-YM-RFl" secondAttribute="trailing" constant="-16" id="ZFE-D4-dtV"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="zJo-YM-RFl"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="2QR-5f-FGy"/>
+                                <exclude reference="72P-jT-9yK"/>
+                                <exclude reference="TyF-cf-rbs"/>
+                                <exclude reference="ZFE-D4-dtV"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="zJo-YM-RFl"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="2QR-5f-FGy"/>
+                                <include reference="72P-jT-9yK"/>
+                                <include reference="TyF-cf-rbs"/>
+                                <include reference="ZFE-D4-dtV"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="tabView" destination="kOf-xE-QXN" id="JgD-St-l4a"/>
+                        <segue destination="mKn-vB-A9i" kind="show" identifier="testManualSeg" id="rfH-Md-eLt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y1P-RP-Gu9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1128" y="248"/>
+        </scene>
+        <!--Emp Det View Controller-->
+        <scene sceneID="Oqg-tc-dCC">
+            <objects>
+                <viewController storyboardIdentifier="EmpDetViewController" id="mKn-vB-A9i" customClass="EmpDetViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ihc-3U-FYd"/>
+                        <viewControllerLayoutGuide type="bottom" id="7Wl-By-jXY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YwY-Sz-o7o">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d0k-0P-XAJ">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aJl-2N-twC">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fUd-km-696">
+                                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                <variation key="widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="13" y="8" width="100" height="100"/>
+                                                </variation>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZPr-U5-Xu0">
+                                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="121" y="8" width="264" height="30"/>
+                                                </variation>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uGp-zz-Tj4">
+                                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="121" y="46" width="264" height="30"/>
+                                                </variation>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dept" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pgs-th-kTO">
+                                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="121" y="84" width="264" height="30"/>
+                                                </variation>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Addr Cont" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xVB-W3-rti">
+                                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="121" y="116" width="264" height="66"/>
+                                                </variation>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qza-d3-Ka1">
+                                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="8" y="190" width="105" height="30"/>
+                                                </variation>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City Cont" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ORN-1h-Ew6">
+                                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="121" y="190" width="264" height="30"/>
+                                                </variation>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="State" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ywc-6N-Nec">
+                                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="8" y="228" width="105" height="30"/>
+                                                </variation>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="State Cont" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VNa-IH-tXJ">
+                                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="121" y="228" width="264" height="30"/>
+                                                </variation>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K88-fI-LSb">
+                                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="8" y="266" width="105" height="30"/>
+                                                </variation>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country Cont" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6mY-5W-K9d">
+                                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="121" y="266" width="264" height="30"/>
+                                                </variation>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PIN" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nbs-XO-szV">
+                                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="8" y="304" width="105" height="30"/>
+                                                </variation>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PIN Cont" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jff-yh-QDA">
+                                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="121" y="304" width="264" height="30"/>
+                                                </variation>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E-Mail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bp9-sB-xVZ">
+                                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="8" y="342" width="105" height="30"/>
+                                                </variation>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E-Mail Cont" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ym-VA-Qhf">
+                                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="121" y="342" width="264" height="30"/>
+                                                </variation>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6mS-fE-cRA">
+                                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="8" y="380" width="105" height="30"/>
+                                                </variation>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone Cont" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pjM-BW-pRK">
+                                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="121" y="380" width="264" height="30"/>
+                                                </variation>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DOB" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nid-t1-8Je">
+                                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="8" y="418" width="105" height="30"/>
+                                                </variation>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DOB Cont" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdW-8W-rNU">
+                                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="121" y="418" width="264" height="30"/>
+                                                </variation>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gender" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AIi-hG-VE2">
+                                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="8" y="456" width="105" height="30"/>
+                                                </variation>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gender Cont" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yWF-bC-ryK">
+                                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="121" y="456" width="264" height="30"/>
+                                                </variation>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zwb-GK-3m1">
+                                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="8" y="494" width="105" height="30"/>
+                                                </variation>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status Cont" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mpv-wG-9QF">
+                                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="121" y="494" width="264" height="30"/>
+                                                </variation>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VMI-0o-L51">
+                                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="8" y="134" width="105" height="30"/>
+                                                </variation>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <variation key="default">
+                                            <mask key="subviews">
+                                                <exclude reference="fUd-km-696"/>
+                                                <exclude reference="ZPr-U5-Xu0"/>
+                                                <exclude reference="uGp-zz-Tj4"/>
+                                                <exclude reference="Pgs-th-kTO"/>
+                                                <exclude reference="xVB-W3-rti"/>
+                                                <exclude reference="Qza-d3-Ka1"/>
+                                                <exclude reference="ORN-1h-Ew6"/>
+                                                <exclude reference="ywc-6N-Nec"/>
+                                                <exclude reference="VNa-IH-tXJ"/>
+                                                <exclude reference="K88-fI-LSb"/>
+                                                <exclude reference="6mY-5W-K9d"/>
+                                                <exclude reference="nbs-XO-szV"/>
+                                                <exclude reference="Jff-yh-QDA"/>
+                                                <exclude reference="Bp9-sB-xVZ"/>
+                                                <exclude reference="3ym-VA-Qhf"/>
+                                                <exclude reference="6mS-fE-cRA"/>
+                                                <exclude reference="pjM-BW-pRK"/>
+                                                <exclude reference="nid-t1-8Je"/>
+                                                <exclude reference="gdW-8W-rNU"/>
+                                                <exclude reference="AIi-hG-VE2"/>
+                                                <exclude reference="yWF-bC-ryK"/>
+                                                <exclude reference="zwb-GK-3m1"/>
+                                                <exclude reference="Mpv-wG-9QF"/>
+                                                <exclude reference="VMI-0o-L51"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="0.0" width="400" height="722"/>
+                                            <mask key="subviews">
+                                                <include reference="fUd-km-696"/>
+                                                <include reference="ZPr-U5-Xu0"/>
+                                                <include reference="uGp-zz-Tj4"/>
+                                                <include reference="Pgs-th-kTO"/>
+                                                <include reference="xVB-W3-rti"/>
+                                                <include reference="Qza-d3-Ka1"/>
+                                                <include reference="ORN-1h-Ew6"/>
+                                                <include reference="ywc-6N-Nec"/>
+                                                <include reference="VNa-IH-tXJ"/>
+                                                <include reference="K88-fI-LSb"/>
+                                                <include reference="6mY-5W-K9d"/>
+                                                <include reference="nbs-XO-szV"/>
+                                                <include reference="Jff-yh-QDA"/>
+                                                <include reference="Bp9-sB-xVZ"/>
+                                                <include reference="3ym-VA-Qhf"/>
+                                                <include reference="6mS-fE-cRA"/>
+                                                <include reference="pjM-BW-pRK"/>
+                                                <include reference="nid-t1-8Je"/>
+                                                <include reference="gdW-8W-rNU"/>
+                                                <include reference="AIi-hG-VE2"/>
+                                                <include reference="yWF-bC-ryK"/>
+                                                <include reference="zwb-GK-3m1"/>
+                                                <include reference="Mpv-wG-9QF"/>
+                                                <include reference="VMI-0o-L51"/>
+                                            </mask>
+                                        </variation>
+                                    </view>
+                                </subviews>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="aJl-2N-twC"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="64" width="400" height="541"/>
+                                    <mask key="subviews">
+                                        <include reference="aJl-2N-twC"/>
+                                    </mask>
+                                </variation>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="d0k-0P-XAJ"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="d0k-0P-XAJ"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="address" destination="xVB-W3-rti" id="A19-WY-v2A"/>
+                        <outlet property="city" destination="ORN-1h-Ew6" id="riU-te-msa"/>
+                        <outlet property="country" destination="6mY-5W-K9d" id="6vc-so-ADY"/>
+                        <outlet property="dept" destination="Pgs-th-kTO" id="mSr-Du-Bii"/>
+                        <outlet property="dob" destination="gdW-8W-rNU" id="sTp-ci-qOk"/>
+                        <outlet property="email" destination="3ym-VA-Qhf" id="Amo-7D-cd6"/>
+                        <outlet property="firstName" destination="ZPr-U5-Xu0" id="sKU-Wn-4V1"/>
+                        <outlet property="gender" destination="yWF-bC-ryK" id="gfa-Wr-8W8"/>
+                        <outlet property="imgView" destination="fUd-km-696" id="CK7-G5-z72"/>
+                        <outlet property="lastName" destination="uGp-zz-Tj4" id="n6n-Oh-jWz"/>
+                        <outlet property="martStatus" destination="Mpv-wG-9QF" id="8Ai-vc-R5X"/>
+                        <outlet property="phone" destination="pjM-BW-pRK" id="Fjq-yy-TXf"/>
+                        <outlet property="pin" destination="Jff-yh-QDA" id="gcf-Tb-GV1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ux6-jQ-rXT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1831.5" y="248"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="tIs-2P-9Ie">
+            <objects>
+                <navigationController id="X0e-lt-efd" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="CoM-mF-lPw">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="gEE-wj-wrf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zvU-o1-jKF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-265.5" y="248"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="login_but.png" width="600" height="222"/>
+    </resources>
 </document>

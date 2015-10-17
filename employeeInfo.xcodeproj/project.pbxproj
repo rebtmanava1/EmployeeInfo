@@ -14,6 +14,14 @@
 		8E6403711BCB3F3300EF3C4C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E6403701BCB3F3300EF3C4C /* Images.xcassets */; };
 		8E6403741BCB3F3300EF3C4C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E6403721BCB3F3300EF3C4C /* LaunchScreen.xib */; };
 		8E6403801BCB3F3300EF3C4C /* employeeInfoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E64037F1BCB3F3300EF3C4C /* employeeInfoTests.m */; };
+		8E64038E1BCB3FF300EF3C4C /* DbManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E64038D1BCB3FF300EF3C4C /* DbManager.m */; };
+		8E6403901BCB498700EF3C4C /* employee.db in Resources */ = {isa = PBXBuildFile; fileRef = 8E64038F1BCB498700EF3C4C /* employee.db */; };
+		8E6403931BCB4E8400EF3C4C /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E6403911BCB4E8400EF3C4C /* libsqlite3.0.dylib */; };
+		8E6403941BCB4E8400EF3C4C /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E6403921BCB4E8400EF3C4C /* libsqlite3.dylib */; };
+		8E6403961BCB56CD00EF3C4C /* login_but.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E6403951BCB56CD00EF3C4C /* login_but.png */; };
+		8E6403991BCB5DD900EF3C4C /* loginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6403981BCB5DD900EF3C4C /* loginViewController.m */; };
+		8E64039C1BCCCB4E00EF3C4C /* EmpListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E64039B1BCCCB4E00EF3C4C /* EmpListViewController.m */; };
+		8E64039F1BCD2D9200EF3C4C /* EmpDetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E64039E1BCD2D9200EF3C4C /* EmpDetViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +48,18 @@
 		8E6403791BCB3F3300EF3C4C /* employeeInfoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = employeeInfoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E64037E1BCB3F3300EF3C4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E64037F1BCB3F3300EF3C4C /* employeeInfoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = employeeInfoTests.m; sourceTree = "<group>"; };
+		8E64038C1BCB3FF300EF3C4C /* DbManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DbManager.h; sourceTree = "<group>"; };
+		8E64038D1BCB3FF300EF3C4C /* DbManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DbManager.m; sourceTree = "<group>"; };
+		8E64038F1BCB498700EF3C4C /* employee.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = employee.db; sourceTree = "<group>"; };
+		8E6403911BCB4E8400EF3C4C /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		8E6403921BCB4E8400EF3C4C /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		8E6403951BCB56CD00EF3C4C /* login_but.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_but.png; sourceTree = "<group>"; };
+		8E6403971BCB5DD900EF3C4C /* loginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = loginViewController.h; sourceTree = "<group>"; };
+		8E6403981BCB5DD900EF3C4C /* loginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = loginViewController.m; sourceTree = "<group>"; };
+		8E64039A1BCCCB4E00EF3C4C /* EmpListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmpListViewController.h; sourceTree = "<group>"; };
+		8E64039B1BCCCB4E00EF3C4C /* EmpListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmpListViewController.m; sourceTree = "<group>"; };
+		8E64039D1BCD2D9200EF3C4C /* EmpDetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmpDetViewController.h; sourceTree = "<group>"; };
+		8E64039E1BCD2D9200EF3C4C /* EmpDetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmpDetViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +67,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E6403931BCB4E8400EF3C4C /* libsqlite3.0.dylib in Frameworks */,
+				8E6403941BCB4E8400EF3C4C /* libsqlite3.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +85,8 @@
 		8E6403571BCB3F3300EF3C4C = {
 			isa = PBXGroup;
 			children = (
+				8E6403911BCB4E8400EF3C4C /* libsqlite3.0.dylib */,
+				8E6403921BCB4E8400EF3C4C /* libsqlite3.dylib */,
 				8E6403621BCB3F3300EF3C4C /* employeeInfo */,
 				8E64037C1BCB3F3300EF3C4C /* employeeInfoTests */,
 				8E6403611BCB3F3300EF3C4C /* Products */,
@@ -83,11 +107,10 @@
 			children = (
 				8E6403671BCB3F3300EF3C4C /* AppDelegate.h */,
 				8E6403681BCB3F3300EF3C4C /* AppDelegate.m */,
-				8E64036A1BCB3F3300EF3C4C /* ViewController.h */,
-				8E64036B1BCB3F3300EF3C4C /* ViewController.m */,
-				8E64036D1BCB3F3300EF3C4C /* Main.storyboard */,
+				8E6403891BCB3F5900EF3C4C /* Model */,
+				8E64038A1BCB3F6700EF3C4C /* View */,
+				8E64038B1BCB3F6E00EF3C4C /* Controller */,
 				8E6403701BCB3F3300EF3C4C /* Images.xcassets */,
-				8E6403721BCB3F3300EF3C4C /* LaunchScreen.xib */,
 				8E6403631BCB3F3300EF3C4C /* Supporting Files */,
 			);
 			path = employeeInfo;
@@ -96,6 +119,8 @@
 		8E6403631BCB3F3300EF3C4C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8E6403951BCB56CD00EF3C4C /* login_but.png */,
+				8E64038F1BCB498700EF3C4C /* employee.db */,
 				8E6403641BCB3F3300EF3C4C /* Info.plist */,
 				8E6403651BCB3F3300EF3C4C /* main.m */,
 			);
@@ -117,6 +142,39 @@
 				8E64037E1BCB3F3300EF3C4C /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8E6403891BCB3F5900EF3C4C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8E64038C1BCB3FF300EF3C4C /* DbManager.h */,
+				8E64038D1BCB3FF300EF3C4C /* DbManager.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		8E64038A1BCB3F6700EF3C4C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8E6403721BCB3F3300EF3C4C /* LaunchScreen.xib */,
+				8E64036D1BCB3F3300EF3C4C /* Main.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		8E64038B1BCB3F6E00EF3C4C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8E64039D1BCD2D9200EF3C4C /* EmpDetViewController.h */,
+				8E64039E1BCD2D9200EF3C4C /* EmpDetViewController.m */,
+				8E6403971BCB5DD900EF3C4C /* loginViewController.h */,
+				8E6403981BCB5DD900EF3C4C /* loginViewController.m */,
+				8E64039A1BCCCB4E00EF3C4C /* EmpListViewController.h */,
+				8E64039B1BCCCB4E00EF3C4C /* EmpListViewController.m */,
+				8E64036A1BCB3F3300EF3C4C /* ViewController.h */,
+				8E64036B1BCB3F3300EF3C4C /* ViewController.m */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,9 +257,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E6403961BCB56CD00EF3C4C /* login_but.png in Resources */,
 				8E64036F1BCB3F3300EF3C4C /* Main.storyboard in Resources */,
 				8E6403741BCB3F3300EF3C4C /* LaunchScreen.xib in Resources */,
 				8E6403711BCB3F3300EF3C4C /* Images.xcassets in Resources */,
+				8E6403901BCB498700EF3C4C /* employee.db in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,8 +280,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E64036C1BCB3F3300EF3C4C /* ViewController.m in Sources */,
+				8E6403991BCB5DD900EF3C4C /* loginViewController.m in Sources */,
 				8E6403691BCB3F3300EF3C4C /* AppDelegate.m in Sources */,
 				8E6403661BCB3F3300EF3C4C /* main.m in Sources */,
+				8E64038E1BCB3FF300EF3C4C /* DbManager.m in Sources */,
+				8E64039F1BCD2D9200EF3C4C /* EmpDetViewController.m in Sources */,
+				8E64039C1BCCCB4E00EF3C4C /* EmpListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
